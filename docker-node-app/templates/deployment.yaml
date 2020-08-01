@@ -29,6 +29,9 @@ spec:
         - name: tz-config
           hostPath:
               path: /usr/share/zoneinfo/America/Los_Angeles
+      volumeMounts:
+        - name: tz-config
+          mountPath: /etc/localtime
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -39,17 +42,17 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
           livenessProbe:
             tcpSocket:
-              port: {{ .Values.service.targetPort }}
+              port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
           readinessProbe:
             httpGet:
               path: /
-              port: {{ .Values.service.targetPort }}
+              port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
           resources:
