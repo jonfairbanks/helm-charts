@@ -4,7 +4,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.0.4"
     created: 2020-07-31T11:10:08.729944+02:00
-    description: A sample Node app for testing Docker & Kubernetes
+    description: A sample Node.js app for testing Docker & Kubernetes
     digest: 35a4e31bfacc496f1b1bce664652916bb8701cc9df77f1b90534f5234ff297a6
     name: helm-chart-test
     urls:
