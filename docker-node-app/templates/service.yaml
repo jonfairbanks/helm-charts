@@ -13,3 +13,4 @@ spec:
       name: http
   selector:
     {{- include "docker-node-app.selectorLabels" . | nindent 4 }}
+  externalTrafficPolicy: {{ .Values.service.externalTrafficPolicy }}
