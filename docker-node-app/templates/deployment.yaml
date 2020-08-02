@@ -51,12 +51,12 @@ spec:
           volumeMounts:
             - name: tz-config
               mountPath: /etc/localtime
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
         volumes:
           - name: tz-config
             hostPath:
                 path: /usr/share/zoneinfo/America/Los_Angeles
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
