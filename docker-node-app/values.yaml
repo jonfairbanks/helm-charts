@@ -49,11 +49,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: docker-node-app.local
-      paths:
-      - path: /
-        backend:
-          serviceName: docker-node-app
-          servicePort: 80
+      paths: "/"
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
