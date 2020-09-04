@@ -9,7 +9,7 @@ entries:
     name: docker-node-app
     type: application
     urls:
-    - https://github.com/jonfairbanks/helm-charts/raw/master/releases/docker-node-app-2.0.4.tgz
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/docker-node-app-2.0.4.tgz
     version: 2.0.4
   f5-api:
   - apiVersion: v2
@@ -20,6 +20,6 @@ entries:
     name: f5-api
     type: application
     urls:
-    - https://github.com/jonfairbanks/helm-charts/raw/master/releases/f5-api-1.0.0.tgz
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/f5-api-1.0.0.tgz
     version: 1.0.0
 generated: "2020-09-04T03:53:33.306550917Z"
