@@ -14,3 +14,4 @@ Local Helm repository for Kubernetes
 - [docker-node-app](https://github.com/jonfairbanks/docker-node-app)
 - [f5-api](https://github.com/jonfairbanks/f5oclock)
 - [f5-web](https://github.com/jonfairbanks/f5oclock)
+- [halbert](https://github.com/Fairbanks-io/Halbert)
