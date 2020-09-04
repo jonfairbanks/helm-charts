@@ -3,7 +3,7 @@ entries:
   docker-node-app:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-09-04T03:53:33.307447681Z"
+    created: "2020-09-04T05:41:20.703851211Z"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: c7b8982720c0bcc39976dd02779614cc9c50fdb440ee22da56d51e0fe81bbf1f
     name: docker-node-app
@@ -14,7 +14,7 @@ entries:
   f5-api:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-04T03:53:33.307848011Z"
+    created: "2020-09-04T05:41:20.704221091Z"
     description: Backend component for F5 O'Clock
     digest: 47f0561409d2282d20b0e3adb49feee1b5a9491c5900e68816c5700fee44f576
     name: f5-api
@@ -22,4 +22,15 @@ entries:
     urls:
     - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/f5-api-1.0.0.tgz
     version: 1.0.0
-generated: "2020-09-04T03:53:33.306550917Z"
+  f5-web:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2020-09-04T05:41:20.704665282Z"
+    description: Front-end component for F5 O'Clock
+    digest: db35953eddfe46f794080b5ed10b86f1b16779b2f21f753b481bce4a56abb39d
+    name: f5-web
+    type: application
+    urls:
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/f5-web-1.0.0.tgz
+    version: 1.0.0
+generated: "2020-09-04T05:41:20.703280189Z"
