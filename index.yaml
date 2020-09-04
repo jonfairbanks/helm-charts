@@ -1,13 +1,25 @@
 apiVersion: v1
 entries:
   docker-node-app:
-  - apiVersion: v1
-    appVersion: "2.0.4"
-    created: 2020-07-31T11:10:08.729944+02:00
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-09-04T03:53:33.307447681Z"
     description: A sample Node.js app for testing Docker & Kubernetes
-    digest: 35a4e31bfacc496f1b1bce664652916bb8701cc9df77f1b90534f5234ff297a6
-    name: helm-chart-test
+    digest: c7b8982720c0bcc39976dd02779614cc9c50fdb440ee22da56d51e0fe81bbf1f
+    name: docker-node-app
+    type: application
     urls:
     - https://github.com/jonfairbanks/helm-charts/raw/master/releases/docker-node-app-2.0.4.tgz
     version: 2.0.4
-generated: 2020-07-31T11:10:08.729368+02:00
+  f5-api:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2020-09-04T03:53:33.307848011Z"
+    description: Backend component for F5 O'Clock
+    digest: 47f0561409d2282d20b0e3adb49feee1b5a9491c5900e68816c5700fee44f576
+    name: f5-api
+    type: application
+    urls:
+    - https://github.com/jonfairbanks/helm-charts/raw/master/releases/f5-api-1.0.0.tgz
+    version: 1.0.0
+generated: "2020-09-04T03:53:33.306550917Z"
