@@ -3,7 +3,7 @@ entries:
   docker-node-app:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:35:40.612812838Z"
+    created: "2020-09-06T19:45:04.93231511Z"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: 19bf74284a532dcc2b52ccf261787761550cd5d3b38bef672fb7a815e04ca0e1
     name: docker-node-app
@@ -14,7 +14,7 @@ entries:
   f5-api:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:35:40.613184952Z"
+    created: "2020-09-06T19:45:04.932678843Z"
     description: Backend component for F5 O'Clock
     digest: 47f0561409d2282d20b0e3adb49feee1b5a9491c5900e68816c5700fee44f576
     name: f5-api
@@ -25,7 +25,7 @@ entries:
   f5-web:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:35:40.613836989Z"
+    created: "2020-09-06T19:45:04.933150411Z"
     description: Front-end component for F5 O'Clock
     digest: db35953eddfe46f794080b5ed10b86f1b16779b2f21f753b481bce4a56abb39d
     name: f5-web
@@ -36,7 +36,7 @@ entries:
   halbert:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:35:40.614385661Z"
+    created: "2020-09-06T19:45:04.933632595Z"
     description: A Helm chart for Kubernetes
     digest: 5a7c998392e26c29111bdc51e8fd474799b8d76b44203bbbcafe4a17b0a3ec69
     name: halbert
@@ -47,9 +47,9 @@ entries:
   json-formatter:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:35:40.614816441Z"
+    created: "2020-09-06T19:45:04.934187693Z"
     description: Beautify and debug JSON data
-    digest: 508878639de5fb8578a939f69357fac91196edfa891f0a0f32daa8294c084b4d
+    digest: 5b61d2a6c7a4b5008b80fdc0851e732813d3b3b7dd0f0793c93412a6fc511e5e
     name: json-formatter
     type: application
     urls:
@@ -58,12 +58,12 @@ entries:
   markdown-editor:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:35:40.615252808Z"
+    created: "2020-09-06T19:45:04.934619033Z"
     description: A full featured Markdown editor with live preview and syntax highlighting.
-    digest: c494e96db043fa4fbb94cfab6de22ad0eccbb2d79ddb59fe638a2b5eb6d2488e
+    digest: 5802c8915ac013a05753c79786f42809699586828fd0b3319382f5a5035b85b1
     name: markdown-editor
     type: application
     urls:
     - _releases/markdown-editor-1.0.0.tgz
     version: 1.0.0
-generated: "2020-09-06T19:35:40.612244611Z"
+generated: "2020-09-06T19:45:04.931569764Z"
