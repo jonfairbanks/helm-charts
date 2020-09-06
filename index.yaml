@@ -3,7 +3,7 @@ entries:
   docker-node-app:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-04T23:57:00.08142565Z"
+    created: "2020-09-06T18:46:55.547596154Z"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: 19bf74284a532dcc2b52ccf261787761550cd5d3b38bef672fb7a815e04ca0e1
     name: docker-node-app
@@ -14,7 +14,7 @@ entries:
   f5-api:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-04T23:57:00.082163453Z"
+    created: "2020-09-06T18:46:55.550422491Z"
     description: Backend component for F5 O'Clock
     digest: 47f0561409d2282d20b0e3adb49feee1b5a9491c5900e68816c5700fee44f576
     name: f5-api
@@ -25,7 +25,7 @@ entries:
   f5-web:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-04T23:57:00.083016913Z"
+    created: "2020-09-06T18:46:55.550866681Z"
     description: Front-end component for F5 O'Clock
     digest: db35953eddfe46f794080b5ed10b86f1b16779b2f21f753b481bce4a56abb39d
     name: f5-web
@@ -36,7 +36,7 @@ entries:
   halbert:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-04T23:57:00.083640176Z"
+    created: "2020-09-06T18:46:55.551218402Z"
     description: A Helm chart for Kubernetes
     digest: 5a7c998392e26c29111bdc51e8fd474799b8d76b44203bbbcafe4a17b0a3ec69
     name: halbert
@@ -44,4 +44,26 @@ entries:
     urls:
     - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/halbert-1.0.0.tgz
     version: 1.0.0
-generated: "2020-09-04T23:57:00.080113753Z"
+  json-formatter:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2020-09-06T18:46:55.551687735Z"
+    description: Beautify and debug JSON data
+    digest: fbf6ca7d3e8f98ad7c599397d8bbd328b3bfdd380e69d24160f2c3be4a7a12c5
+    name: json-formatter
+    type: application
+    urls:
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/json-formatter-1.0.0.tgz
+    version: 1.0.0
+  markdown-editor:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2020-09-06T18:46:55.552185005Z"
+    description: A full featured Markdown editor with live preview and syntax highlighting.
+    digest: bd559201564d57be931c710a5b2c90adbc493587695db0feac4f3f1bccbbc7ac
+    name: markdown-editor
+    type: application
+    urls:
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/markdown-editor-1.0.0.tgz
+    version: 1.0.0
+generated: "2020-09-06T18:46:55.546023608Z"
