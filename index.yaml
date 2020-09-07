@@ -9,7 +9,7 @@ entries:
     name: docker-node-app
     type: application
     urls:
-    - _releases/docker-node-app-1.0.0.tgz
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/docker-node-app-1.0.0.tgz
     version: 1.0.0
   f5-api:
   - apiVersion: v2
@@ -20,7 +20,7 @@ entries:
     name: f5-api
     type: application
     urls:
-    - _releases/f5-api-1.0.0.tgz
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/f5-api-1.0.0.tgz
     version: 1.0.0
   f5-web:
   - apiVersion: v2
@@ -31,7 +31,7 @@ entries:
     name: f5-web
     type: application
     urls:
-    - _releases/f5-web-1.0.0.tgz
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/f5-web-1.0.0.tgz
     version: 1.0.0
   halbert:
   - apiVersion: v2
@@ -42,7 +42,7 @@ entries:
     name: halbert
     type: application
     urls:
-    - _releases/halbert-1.0.0.tgz
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/halbert-1.0.0.tgz
     version: 1.0.0
   json-formatter:
   - apiVersion: v2
@@ -53,7 +53,7 @@ entries:
     name: json-formatter
     type: application
     urls:
-    - _releases/json-formatter-1.0.0.tgz
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/json-formatter-1.0.0.tgz
     version: 1.0.0
   markdown-editor:
   - apiVersion: v2
@@ -64,6 +64,6 @@ entries:
     name: markdown-editor
     type: application
     urls:
-    - _releases/markdown-editor-1.0.0.tgz
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/markdown-editor-1.0.0.tgz
     version: 1.0.0
 generated: "2020-09-06T19:45:04.931569764Z"
