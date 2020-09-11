@@ -44,6 +44,17 @@ entries:
     urls:
     - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/halbert-1.0.0.tgz
     version: 1.0.0
+  jonfairbanks-homepage:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2020-09-11T22:52:06.31278936Z"
+    description: Personal landing page for jonfairbanks related domains
+    digest: c1532701f55be92bb4355bddf7a280f31a9fe8d60e1434b6f5a56f6b90eb405f
+    name: jonfairbanks-homepage
+    type: application
+    urls:
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/jonfairbanks-homepage-1.0.0.tgz
+    version: 1.0.0
   json-formatter:
   - apiVersion: v2
     appVersion: 1.0.0

@@ -15,5 +15,6 @@ Local Helm repository for Kubernetes
 - [f5-api](https://github.com/jonfairbanks/f5oclock)
 - [f5-web](https://github.com/jonfairbanks/f5oclock)
 - [halbert](https://github.com/Fairbanks-io/Halbert)
-- [json-formatter](https://github.com/Fairbanks-io/json-formatter)
-- [markdown-editor](https://github.com/Fairbanks-io/markdown-editor)
+- [jonfairbanks-homepage](https://jonfairbanks.github.io/)
+- [json-formatter](https://github.com/jonfairbanks/json-formatter)
+- [markdown-editor](https://github.com/jonfairbanks/markdown-editor)
