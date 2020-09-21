@@ -35,7 +35,10 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:          
           - name: "MONGO_URI"
-            value: {{ .Values.MONGO_URI }}
+            valueFrom:
+              secretKeyRef: 
+                name: {{ .Values.f5.secretName }}
+                key: mongoUri
           ports:
             - name: http
               containerPort: 3000

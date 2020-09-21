@@ -33,7 +33,10 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:          
           - name: "MONGO_URI"
-            value: {{ .Values.MONGO_URI }}
+            valueFrom:
+              secretKeyRef: 
+                name: {{ .Values.f5.secretName }}
+                key: mongoUri
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
