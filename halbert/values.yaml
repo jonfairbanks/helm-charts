@@ -10,8 +10,28 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
-HUBOT_SLACK_TOKEN: 'YOUR-SLACK-TOKEN'
-LOG_DIR: '/app/logs/'
+slack:
+  secretName: hubot-slack-token
+  token: YOUR-SLACK-TOKEN
+  logDir: '/app/logs/'
+
+
+## Enable persistence using Persistent Volume Claims
+## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+##
+persistence:
+  enabled: false
+  type: pvc
+  name: halbert-pvc
+  # storageClassName: default
+  accessModes:
+    - ReadWriteOnce
+  size: 8Gi
+  # annotations: {}
+  finalizers:
+    - kubernetes.io/pvc-protection
+  # subPath: ""
+  # existingClaim:
 
 imagePullSecrets: []
 nameOverride: ""

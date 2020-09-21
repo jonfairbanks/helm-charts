@@ -36,9 +36,9 @@ entries:
   halbert:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:45:04.933632595Z"
+    created: "2020-09-20T23:23:01.799937717-07:00"
     description: A Helm chart for Kubernetes
-    digest: 5a7c998392e26c29111bdc51e8fd474799b8d76b44203bbbcafe4a17b0a3ec69
+    digest: 92ba4f6248b02d09cd8e96a0734758a13f85098c7643bcb44144508d71f0e76c
     name: halbert
     type: application
     urls:
