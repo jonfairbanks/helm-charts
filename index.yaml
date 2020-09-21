@@ -14,9 +14,9 @@ entries:
   f5-api:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:45:04.932678843Z"
+    created: "2020-09-20T23:56:13.650000722-07:00"
     description: Backend component for F5 O'Clock
-    digest: 47f0561409d2282d20b0e3adb49feee1b5a9491c5900e68816c5700fee44f576
+    digest: 91999aebd2e7ec8fc5fe0bce9ed3d68b6dfba006ca59dd139ce6528205ad344e
     name: f5-api
     type: application
     urls:
@@ -25,9 +25,9 @@ entries:
   f5-web:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:45:04.933150411Z"
+    created: "2020-09-20T23:56:13.65045078-07:00"
     description: Front-end component for F5 O'Clock
-    digest: db35953eddfe46f794080b5ed10b86f1b16779b2f21f753b481bce4a56abb39d
+    digest: 71bc4208bb9a4022694407648191337522bbbf67d3b2446fec27eb0eef5e5166
     name: f5-web
     type: application
     urls:
