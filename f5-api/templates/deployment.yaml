@@ -31,9 +31,19 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          livenessProbe:
+            exec:
+              command:
+              - ls
+              - /app
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
           env:          
           - name: "MONGO_URI"
-            value: {{ .Values.MONGO_URI }}
+            valueFrom:
+              secretKeyRef: 
+                name: {{ .Values.f5.secretName }}
+                key: mongoUri
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

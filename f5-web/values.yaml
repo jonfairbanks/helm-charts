@@ -10,6 +10,10 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
+f5:
+  secretName: f5-mongoUri
+  mongoUri: "mongodb://localhost/f5oclock"
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
