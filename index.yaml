@@ -3,7 +3,17 @@ entries:
   docker-node-app:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:45:04.93231511Z"
+    created: "2021-01-18T12:01:55.60510131-06:00"
+    description: A sample Node.js app for testing Docker & Kubernetes
+    digest: ba64e3440df9be1a1c90b9fc3b4403f0c0e2ea900a1b4291dd8fe209d369d3d9
+    name: docker-node-app
+    type: application
+    urls:
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/docker-node-app-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-01-18T12:01:55.603753846-06:00"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: 19bf74284a532dcc2b52ccf261787761550cd5d3b38bef672fb7a815e04ca0e1
     name: docker-node-app
@@ -14,7 +24,7 @@ entries:
   f5-api:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-20T23:56:13.650000722-07:00"
+    created: "2021-01-18T12:01:55.605964163-06:00"
     description: Backend component for F5 O'Clock
     digest: 91999aebd2e7ec8fc5fe0bce9ed3d68b6dfba006ca59dd139ce6528205ad344e
     name: f5-api
@@ -25,7 +35,7 @@ entries:
   f5-web:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-20T23:56:13.65045078-07:00"
+    created: "2021-01-18T12:01:55.607223419-06:00"
     description: Front-end component for F5 O'Clock
     digest: 71bc4208bb9a4022694407648191337522bbbf67d3b2446fec27eb0eef5e5166
     name: f5-web
@@ -36,8 +46,8 @@ entries:
   halbert:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-20T23:23:01.799937717-07:00"
-    description: A Helm chart for running Hubot on Kubernetes
+    created: "2021-01-18T12:01:55.608619243-06:00"
+    description: A Helm chart for Kubernetes
     digest: 92ba4f6248b02d09cd8e96a0734758a13f85098c7643bcb44144508d71f0e76c
     name: halbert
     type: application
@@ -47,7 +57,7 @@ entries:
   jonfairbanks-homepage:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-11T22:52:06.31278936Z"
+    created: "2021-01-18T12:01:55.610035168-06:00"
     description: Personal landing page for jonfairbanks related domains
     digest: c1532701f55be92bb4355bddf7a280f31a9fe8d60e1434b6f5a56f6b90eb405f
     name: jonfairbanks-homepage
@@ -58,7 +68,7 @@ entries:
   json-formatter:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:45:04.934187693Z"
+    created: "2021-01-18T12:01:55.611399482-06:00"
     description: Beautify and debug JSON data
     digest: 5b61d2a6c7a4b5008b80fdc0851e732813d3b3b7dd0f0793c93412a6fc511e5e
     name: json-formatter
@@ -69,7 +79,7 @@ entries:
   markdown-editor:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2020-09-06T19:45:04.934619033Z"
+    created: "2021-01-18T12:01:55.612837443-06:00"
     description: A full featured Markdown editor with live preview and syntax highlighting.
     digest: 5802c8915ac013a05753c79786f42809699586828fd0b3319382f5a5035b85b1
     name: markdown-editor
@@ -77,4 +87,4 @@ entries:
     urls:
     - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/markdown-editor-1.0.0.tgz
     version: 1.0.0
-generated: "2020-09-06T19:45:04.931569764Z"
+generated: "2021-01-18T12:01:55.602012213-06:00"
