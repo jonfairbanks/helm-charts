@@ -48,14 +48,18 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  requests:
+    cpu: 20m
+    memory: 150Mi
 
 autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
+  targetCPUUtilizationPercentage: 50
+  targetMemoryUtilizationPercentage: 75
+minAvailable: 1
 
 nodeSelector: {}
 tolerations: []
