@@ -18,14 +18,6 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-autoscaling:
-  enabled: false
-  minReplicas: 2
-  maxReplicas: 10
-  targetCPUUtilizationPercentage: 50
-  targetMemoryUtilizationPercentage: 75
-minAvailable: 1
-
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
