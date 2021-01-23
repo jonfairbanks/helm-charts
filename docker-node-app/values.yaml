@@ -65,7 +65,7 @@ autoscaling:
   minReplicas: 5
   maxReplicas: 100
   targetCPUUtilizationPercentage: 5
-minAvailable: 1
+minAvailable: 3
 
 nodeSelector: {}
 tolerations: []
