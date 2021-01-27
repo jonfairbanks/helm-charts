@@ -11,7 +11,7 @@ image:
   tag: "latest"
 
 f5:
-  secretName: f5-mongoUri
+  secretName: f5-mongouri
   mongoUri: "mongodb://localhost/f5oclock"
 
 imagePullSecrets: []
