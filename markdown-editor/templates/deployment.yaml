@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "json-formatter.fullname" . }}
+  name: {{ include "markdown-editor.fullname" . }}
   labels:
-    {{- include "json-formatter.labels" . | nindent 4 }}
+    {{- include "markdown-editor.labels" . | nindent 4 }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
 {{- end }}
   selector:
     matchLabels:
-      {{- include "json-formatter.selectorLabels" . | nindent 6 }}
+      {{- include "markdown-editor.selectorLabels" . | nindent 6 }}
   template:
     metadata:
     {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       labels:
-        {{- include "json-formatter.selectorLabels" . | nindent 8 }}
+        {{- include "markdown-editor.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "json-formatter.serviceAccountName" . }}
+      serviceAccountName: {{ include "markdown-editor.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:

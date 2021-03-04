@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "json-formatter.fullname" . }}
+  name: {{ include "markdown-editor.fullname" . }}
   labels:
-    {{- include "json-formatter.labels" . | nindent 4 }}
+    {{- include "markdown-editor.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "json-formatter.fullname" . }}
+    name: {{ include "markdown-editor.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
