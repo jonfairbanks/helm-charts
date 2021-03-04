@@ -8,7 +8,7 @@ Local Helm repository for Kubernetes
 ### Setup
 - `helm repo add jonfairbanks https://jonfairbanks.github.io/helm-charts`
 - `helm repo update`
-- `helm search repo jonfairbnanks`
+- `helm search repo jonfairbanks`
 
 ### Charts
 - [docker-node-app](https://github.com/jonfairbanks/docker-node-app)
