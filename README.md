@@ -18,3 +18,4 @@ Local Helm repository for Kubernetes
 - [jonfairbanks-homepage](https://jonfairbanks.github.io/)
 - [json-formatter](https://github.com/jonfairbanks/json-formatter)
 - [markdown-editor](https://github.com/jonfairbanks/markdown-editor)
+- [mealie](https://github.com/hay-kot/mealie)
