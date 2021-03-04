@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "docker-node-app.name" -}}
+{{- define "mealie.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -11,7 +11,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "docker-node-app.fullname" -}}
+{{- define "mealie.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -27,16 +27,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "docker-node-app.chart" -}}
+{{- define "mealie.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "docker-node-app.labels" -}}
-helm.sh/chart: {{ include "docker-node-app.chart" . }}
-{{ include "docker-node-app.selectorLabels" . }}
+{{- define "mealie.labels" -}}
+helm.sh/chart: {{ include "mealie.chart" . }}
+{{ include "mealie.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -46,17 +46,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "docker-node-app.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "docker-node-app.name" . }}
+{{- define "mealie.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "mealie.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "docker-node-app.serviceAccountName" -}}
+{{- define "mealie.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "docker-node-app.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "mealie.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
