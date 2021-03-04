@@ -3,7 +3,7 @@ entries:
   docker-node-app:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-04T12:53:04.060893016-08:00"
+    created: "2021-03-04T13:40:34.767939339-08:00"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: 1c546778fd59abe8bc682403183e86fc0c6329e98bef235b482fdde1f894dbec
     name: docker-node-app
@@ -14,7 +14,7 @@ entries:
   f5-api:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-04T12:53:04.062034503-08:00"
+    created: "2021-03-04T13:40:34.768975225-08:00"
     description: Backend component for F5 O'Clock
     digest: 612d58cfa7d5c04aa8e8071f4868cecd03d6e6e27dac5f26bbb151530fc3da54
     name: f5-api
@@ -24,7 +24,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-04T12:53:04.061352572-08:00"
+    created: "2021-03-04T13:40:34.768474323-08:00"
     description: Backend component for F5 O'Clock
     digest: db512401276df9c836c954fb1ea9be323d0c333855b94e68a8f2b87cc2adc614
     name: f5-api
@@ -35,7 +35,7 @@ entries:
   f5-web:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-04T12:53:04.065445553-08:00"
+    created: "2021-03-04T13:40:34.770237955-08:00"
     description: Front-end component for F5 O'Clock
     digest: dd78c8b53637716c3c21e7cea131a3f2bfa3219f13eb01fea31bc03b7f37d4a3
     name: f5-web
@@ -45,7 +45,7 @@ entries:
     version: 1.1.3
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-04T12:53:04.064712219-08:00"
+    created: "2021-03-04T13:40:34.769676152-08:00"
     description: Front-end component for F5 O'Clock
     digest: e16dc62a9cd639db6cd96c5bb413997498c227d566f540f4f6e903372bdabc58
     name: f5-web
@@ -56,7 +56,7 @@ entries:
   halbert:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-04T12:53:04.065958747-08:00"
+    created: "2021-03-04T13:40:34.770824622-08:00"
     description: A Helm chart for Kubernetes
     digest: 92ba4f6248b02d09cd8e96a0734758a13f85098c7643bcb44144508d71f0e76c
     name: halbert
@@ -67,7 +67,7 @@ entries:
   jonfairbanks-homepage:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-04T12:53:04.066487586-08:00"
+    created: "2021-03-04T13:40:34.7714152-08:00"
     description: Personal landing page for jonfairbanks related domains
     digest: 2ad5945ff401b2b95df236ab3110ab277579a1f7aba8d56abdf7f2e016f72081
     name: jonfairbanks-homepage
@@ -78,7 +78,7 @@ entries:
   json-formatter:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-04T12:53:04.067005529-08:00"
+    created: "2021-03-04T13:40:34.772006616-08:00"
     description: Beautify and debug JSON data
     digest: 595b195aa6e84959725ab73522be232b5b7c568c1efe8fcbe8e586922c68fa31
     name: json-formatter
@@ -89,7 +89,7 @@ entries:
   markdown-editor:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-04T12:53:04.067986101-08:00"
+    created: "2021-03-04T13:40:34.773177715-08:00"
     description: A full featured Markdown editor with live preview and syntax highlighting.
     digest: 0a1f761d7ce9bc48591a76119870e15ee454b3579c1f1c510a327a065f189de1
     name: markdown-editor
@@ -99,7 +99,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-03-04T12:53:04.067465085-08:00"
+    created: "2021-03-04T13:40:34.772673461-08:00"
     description: A full featured Markdown editor with live preview and syntax highlighting.
     digest: 6ca7e1e626be358db82d1b878374533c45ab9d1804c4a1b3863259b3ffd671a5
     name: markdown-editor
@@ -110,7 +110,17 @@ entries:
   mealie:
   - apiVersion: v2
     appVersion: 0.3.0
-    created: "2021-03-04T12:53:04.068979804-08:00"
+    created: "2021-03-04T13:40:34.774816192-08:00"
+    description: A self-hosted recipe manager and meal planner
+    digest: 02302243d77e163f2784b71a60095b4b303f074746fef7c7d13fd229282b6b02
+    name: mealie
+    type: application
+    urls:
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/mealie-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 0.3.0
+    created: "2021-03-04T13:40:34.774320039-08:00"
     description: A self-hosted recipe manager and meal planner
     digest: 2200bff5d46cbfdfbc1e0183c361066377a9bc29de87bccedb6a28f0a6b7a013
     name: mealie
@@ -120,7 +130,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2021-03-04T12:53:04.068449568-08:00"
+    created: "2021-03-04T13:40:34.773747899-08:00"
     description: A self-hosted recipe manager and meal planner
     digest: 690ec95bca0c2bf925be73fb0bd2170863f6405ffca28bb01258f5f2ca83fbd4
     name: mealie
@@ -128,4 +138,4 @@ entries:
     urls:
     - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/mealie-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-04T12:53:04.060224495-08:00"
+generated: "2021-03-04T13:40:34.767253498-08:00"

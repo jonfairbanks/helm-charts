@@ -39,13 +39,13 @@ spec:
               protocol: TCP
           livenessProbe:
             tcpSocket:
-              port: 9000
+              port: http
             initialDelaySeconds: 3
             periodSeconds: 3
           readinessProbe:
             httpGet:
               path: /
-              port: 9000
+              port: http
             initialDelaySeconds: 3
             periodSeconds: 3
           volumeMounts:
