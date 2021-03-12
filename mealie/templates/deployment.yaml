@@ -53,7 +53,7 @@ spec:
             periodSeconds: 3
           volumeMounts:
             - name: tz-config
-              mountPath: /etc/timezone
+              mountPath: /etc/localtime
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
