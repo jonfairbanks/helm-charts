@@ -11,6 +11,7 @@ image:
   tag: "latest"
 
 f5:
+  createSecret: true
   secretName: f5-mongoUri
   mongoUri: "mongodb://localhost/f5oclock"
   subreddit: "politics"
