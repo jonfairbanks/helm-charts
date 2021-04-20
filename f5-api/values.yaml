@@ -13,6 +13,7 @@ image:
 f5:
   secretName: f5-mongoUri
   mongoUri: "mongodb://localhost/f5oclock"
+  subreddit: "politics"
 
 imagePullSecrets: []
 nameOverride: ""
