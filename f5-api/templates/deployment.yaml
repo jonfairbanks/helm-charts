@@ -44,6 +44,8 @@ spec:
               secretKeyRef: 
                 name: {{ .Values.f5.secretName }}
                 key: mongoUri
+          - name: "SUBREDDIT"
+            value: {{ .Values.f5.subreddit }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
