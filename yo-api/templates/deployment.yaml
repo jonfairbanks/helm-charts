@@ -41,7 +41,10 @@ spec:
               port: http
           env:          
             - name: "MONGO_URI"
-              value: {{ .Values.mongoURI }}
+              valueFrom:
+                secretKeyRef: 
+                  name: {{ .Values.secretName }}
+                  key: mongoUri
             - name: "ERROR_URL"
               value: {{ .Values.errorURL }}
             - name: "BASE_URL"

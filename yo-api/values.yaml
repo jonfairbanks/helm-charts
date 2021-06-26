@@ -5,7 +5,7 @@ authDomain: "xxxxxxxxxxxxxxxxxxx"
 baseURL: "https://host.tld"
 enableAuth: "true"
 errorURL: "https://host.tld/missing.html"
-mongoURI: "mongodb+srv://user:pass@host.tld/db?retryWrites=true&w=majority"
+secretName: yo-mongoUri
 
 fullnameOverride: ""
 image:
