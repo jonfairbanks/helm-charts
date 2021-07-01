@@ -1,0 +1,37 @@
+affinity: {}
+
+apiURL: "https://api.host.tld/api/"
+authDomain: "xxxxxxxxxxxxxxxxxxx"
+baseURL: "https://host.tld"
+enableAuth: "true"
+errorURL: "https://host.tld/missing.html"
+secretName: yo-mongoUri
+
+fullnameOverride: ""
+image:
+  pullPolicy: Always
+  repository: jonfairbanks/yo-api
+imagePullSecrets: []
+ingress:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  enabled: true
+  hosts:
+  - host: api.host.tld
+    paths:
+    - /
+  tls: []
+
+nameOverride: ""
+nodeSelector: {}
+podSecurityContext: {}
+replicaCount: 1
+resources: {}
+securityContext: {}
+service:
+  port: 80
+  type: ClusterIP
+serviceAccount:
+  create: true
+  name: null
+tolerations: []

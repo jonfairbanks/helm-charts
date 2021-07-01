@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: develop
+description: Web client for Yo application
+name: yo-client
+type: application
+version: 0.1.0
