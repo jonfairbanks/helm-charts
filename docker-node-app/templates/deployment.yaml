@@ -4,6 +4,8 @@ metadata:
   name: {{ include "docker-node-app.fullname" . }}
   labels:
     {{- include "docker-node-app.labels" . | nindent 4 }}
+  annotations:
+    {{- toYaml .Values.annotations | nindent 4 }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -15,7 +17,7 @@ spec:
     metadata:
     {{- with .Values.podAnnotations }}
       annotations:
-        {{- toYaml . | nindent 8 }}
+        {{- toYaml .Values.annotations | nindent 8 }}
     {{- end }}
       labels:
         {{- include "docker-node-app.selectorLabels" . | nindent 8 }}
