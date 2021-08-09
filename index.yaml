@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   docker-node-app:
   - apiVersion: v2
+    appVersion: 2.0.19
+    created: "2021-08-08T23:34:58.640073557-07:00"
+    description: A sample Node.js app for testing Docker & Kubernetes
+    digest: 4a6bbb2402c9ca02fe4ed48fca272d96124edc635c64d5eac7923bcfcedc6e5f
+    name: docker-node-app
+    type: application
+    urls:
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/docker-node-app-2.0.19.tgz
+    version: 2.0.19
+  - apiVersion: v2
     appVersion: 2.0.10
-    created: "2021-07-26T22:31:27.228331843-05:00"
+    created: "2021-08-08T23:34:58.639417887-07:00"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: 1ec71b776ada6c4b20c98c11d84b2d07082fea0d3d6132e6edd4cfd07be3637e
     name: docker-node-app
@@ -13,7 +23,7 @@ entries:
     version: 1.2.6
   - apiVersion: v2
     appVersion: 2.0.9
-    created: "2021-07-26T22:31:27.226931128-05:00"
+    created: "2021-08-08T23:34:58.638922014-07:00"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: 144226c90e60e938c38b278e22b505b6a73e4ba38be52517a486f32edf7b2b13
     name: docker-node-app
@@ -23,7 +33,7 @@ entries:
     version: 1.2.5
   - apiVersion: v2
     appVersion: 2.0.7
-    created: "2021-07-26T22:31:27.225422624-05:00"
+    created: "2021-08-08T23:34:58.638355741-07:00"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: 5f57f4e86bf450049a44058fc4235b388cdc94d16f0d10dd727f13161af9ce83
     name: docker-node-app
@@ -33,7 +43,7 @@ entries:
     version: 1.2.4
   - apiVersion: v2
     appVersion: 2.0.7
-    created: "2021-07-26T22:31:27.221990108-05:00"
+    created: "2021-08-08T23:34:58.637834446-07:00"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: ab58ae6312322d1b614171b3701ff685c26de4d7597995811b61cadde6d3ac9b
     name: docker-node-app
@@ -43,7 +53,7 @@ entries:
     version: 1.2.3
   - apiVersion: v2
     appVersion: 2.0.7
-    created: "2021-07-26T22:31:27.218625077-05:00"
+    created: "2021-08-08T23:34:58.637250852-07:00"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: ae551eb7a85f6b738c261be4bfb803bb223a81fe35ab14671f1b85c8b0136ecd
     name: docker-node-app
@@ -53,7 +63,7 @@ entries:
     version: 1.2.2
   - apiVersion: v2
     appVersion: 2.0.7
-    created: "2021-07-26T22:31:27.213861025-05:00"
+    created: "2021-08-08T23:34:58.636735703-07:00"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: 327be1084b5ca5e911a46f4630bed0f278e2c3786e3dd6086a1fdb65811e71e4
     name: docker-node-app
@@ -63,7 +73,7 @@ entries:
     version: 1.2.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.212241504-05:00"
+    created: "2021-08-08T23:34:58.635723004-07:00"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: 1c546778fd59abe8bc682403183e86fc0c6329e98bef235b482fdde1f894dbec
     name: docker-node-app
@@ -73,7 +83,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.199760038-05:00"
+    created: "2021-08-08T23:34:58.632985506-07:00"
     description: A sample Node.js app for testing Docker & Kubernetes
     digest: 19bf74284a532dcc2b52ccf261787761550cd5d3b38bef672fb7a815e04ca0e1
     name: docker-node-app
@@ -84,7 +94,7 @@ entries:
   f5-api:
   - apiVersion: v2
     appVersion: 1.0.5
-    created: "2021-07-26T22:31:27.266637363-05:00"
+    created: "2021-08-08T23:34:58.642921684-07:00"
     description: Backend component for F5 O'Clock
     digest: f25c4ef20164573194e0ea54cd0df8b7b95f2c6ff51ee07cb6a667e99654c766
     name: f5-api
@@ -94,7 +104,7 @@ entries:
     version: 1.6.0
   - apiVersion: v2
     appVersion: 1.0.2
-    created: "2021-07-26T22:31:27.258730242-05:00"
+    created: "2021-08-08T23:34:58.642483919-07:00"
     description: Backend component for F5 O'Clock
     digest: 95b0753007cae5f0b24e3974b0bfff5362eafdf4a16dd9052c1c85dfa924bfe0
     name: f5-api
@@ -104,7 +114,7 @@ entries:
     version: 1.5.0
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2021-07-26T22:31:27.255980676-05:00"
+    created: "2021-08-08T23:34:58.642062636-07:00"
     description: Backend component for F5 O'Clock
     digest: 0f4afc7cfe5bfe639facd721f03b6b46787e0c58c28a060fd162243ac3691cdc
     name: f5-api
@@ -114,7 +124,7 @@ entries:
     version: 1.4.0
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2021-07-26T22:31:27.243249824-05:00"
+    created: "2021-08-08T23:34:58.641680186-07:00"
     description: Backend component for F5 O'Clock
     digest: ffde7e522601bdf75a5c53cc4a1baac78333762a651e33bb63391c4cf8c8ede5
     name: f5-api
@@ -124,7 +134,7 @@ entries:
     version: 1.3.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.241561073-05:00"
+    created: "2021-08-08T23:34:58.641243259-07:00"
     description: Backend component for F5 O'Clock
     digest: 612d58cfa7d5c04aa8e8071f4868cecd03d6e6e27dac5f26bbb151530fc3da54
     name: f5-api
@@ -134,7 +144,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.239453027-05:00"
+    created: "2021-08-08T23:34:58.640812757-07:00"
     description: Backend component for F5 O'Clock
     digest: db512401276df9c836c954fb1ea9be323d0c333855b94e68a8f2b87cc2adc614
     name: f5-api
@@ -144,7 +154,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.230165529-05:00"
+    created: "2021-08-08T23:34:58.640365493-07:00"
     description: Backend component for F5 O'Clock
     digest: 91999aebd2e7ec8fc5fe0bce9ed3d68b6dfba006ca59dd139ce6528205ad344e
     name: f5-api
@@ -155,7 +165,7 @@ entries:
   f5-web:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.280270514-05:00"
+    created: "2021-08-08T23:34:58.647379792-07:00"
     description: Front-end component for F5 O'Clock
     digest: 67eaad28c6e52feb7f2ba7965ccb6c7438320a94f0391f2019216010a2b44111
     name: f5-web
@@ -165,7 +175,7 @@ entries:
     version: 1.1.4
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.278723526-05:00"
+    created: "2021-08-08T23:34:58.645930446-07:00"
     description: Front-end component for F5 O'Clock
     digest: dd78c8b53637716c3c21e7cea131a3f2bfa3219f13eb01fea31bc03b7f37d4a3
     name: f5-web
@@ -175,7 +185,7 @@ entries:
     version: 1.1.3
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.273539238-05:00"
+    created: "2021-08-08T23:34:58.645399932-07:00"
     description: Front-end component for F5 O'Clock
     digest: e16dc62a9cd639db6cd96c5bb413997498c227d566f540f4f6e903372bdabc58
     name: f5-web
@@ -185,7 +195,7 @@ entries:
     version: 1.1.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.271684994-05:00"
+    created: "2021-08-08T23:34:58.64454284-07:00"
     description: Front-end component for F5 O'Clock
     digest: 13eaba3bede6b07d80affe30ef917927e83e09f749e81dd5124fb9febdca80e8
     name: f5-web
@@ -195,7 +205,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.270096018-05:00"
+    created: "2021-08-08T23:34:58.643936338-07:00"
     description: Front-end component for F5 O'Clock
     digest: c5bf6e83606143e2767dff5f7702db44d990fcf251b632cc6b8ba811ba002730
     name: f5-web
@@ -205,7 +215,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.268477-05:00"
+    created: "2021-08-08T23:34:58.643404148-07:00"
     description: Front-end component for F5 O'Clock
     digest: 71bc4208bb9a4022694407648191337522bbbf67d3b2446fec27eb0eef5e5166
     name: f5-web
@@ -216,7 +226,7 @@ entries:
   halbert:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.281815669-05:00"
+    created: "2021-08-08T23:34:58.649345685-07:00"
     description: A Helm chart for Kubernetes
     digest: 92ba4f6248b02d09cd8e96a0734758a13f85098c7643bcb44144508d71f0e76c
     name: halbert
@@ -227,7 +237,7 @@ entries:
   jonfairbanks-homepage:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.284932273-05:00"
+    created: "2021-08-08T23:34:58.650379056-07:00"
     description: Personal landing page for jonfairbanks related domains
     digest: 2ad5945ff401b2b95df236ab3110ab277579a1f7aba8d56abdf7f2e016f72081
     name: jonfairbanks-homepage
@@ -237,7 +247,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.283515915-05:00"
+    created: "2021-08-08T23:34:58.64989771-07:00"
     description: Personal landing page for jonfairbanks related domains
     digest: c1532701f55be92bb4355bddf7a280f31a9fe8d60e1434b6f5a56f6b90eb405f
     name: jonfairbanks-homepage
@@ -248,7 +258,7 @@ entries:
   json-formatter:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.287732695-05:00"
+    created: "2021-08-08T23:34:58.651330294-07:00"
     description: Beautify and debug JSON data
     digest: 595b195aa6e84959725ab73522be232b5b7c568c1efe8fcbe8e586922c68fa31
     name: json-formatter
@@ -258,7 +268,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.286349743-05:00"
+    created: "2021-08-08T23:34:58.650876885-07:00"
     description: Beautify and debug JSON data
     digest: 5b61d2a6c7a4b5008b80fdc0851e732813d3b3b7dd0f0793c93412a6fc511e5e
     name: json-formatter
@@ -269,7 +279,7 @@ entries:
   markdown-editor:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.298147021-05:00"
+    created: "2021-08-08T23:34:58.652620402-07:00"
     description: A full featured Markdown editor with live preview and syntax highlighting.
     digest: 0a1f761d7ce9bc48591a76119870e15ee454b3579c1f1c510a327a065f189de1
     name: markdown-editor
@@ -279,7 +289,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.296392764-05:00"
+    created: "2021-08-08T23:34:58.652200796-07:00"
     description: A full featured Markdown editor with live preview and syntax highlighting.
     digest: 6ca7e1e626be358db82d1b878374533c45ab9d1804c4a1b3863259b3ffd671a5
     name: markdown-editor
@@ -289,7 +299,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-07-26T22:31:27.289150361-05:00"
+    created: "2021-08-08T23:34:58.651738447-07:00"
     description: A full featured Markdown editor with live preview and syntax highlighting.
     digest: 5802c8915ac013a05753c79786f42809699586828fd0b3319382f5a5035b85b1
     name: markdown-editor
@@ -300,7 +310,7 @@ entries:
   mealie:
   - apiVersion: v2
     appVersion: 0.3.0
-    created: "2021-07-26T22:31:27.314467283-05:00"
+    created: "2021-08-08T23:34:58.655433888-07:00"
     description: A self-hosted recipe manager and meal planner
     digest: c23bdbfb75bb120600832e58e110aeba29c5644d14cfd19645d33421390a2389
     name: mealie
@@ -310,7 +320,7 @@ entries:
     version: 1.0.5
   - apiVersion: v2
     appVersion: 0.3.0
-    created: "2021-07-26T22:31:27.313010024-05:00"
+    created: "2021-08-08T23:34:58.654926282-07:00"
     description: A self-hosted recipe manager and meal planner
     digest: c55791573b4364242c3f1c7a8de6586ee469c4d4374645e86532c546371e201c
     name: mealie
@@ -320,7 +330,7 @@ entries:
     version: 1.0.4
   - apiVersion: v2
     appVersion: 0.3.0
-    created: "2021-07-26T22:31:27.309763246-05:00"
+    created: "2021-08-08T23:34:58.654431247-07:00"
     description: A self-hosted recipe manager and meal planner
     digest: aec9bd180d27155d95e466d6da2bd358f3eb52abaf8dabdff206c772b0e290c8
     name: mealie
@@ -330,7 +340,7 @@ entries:
     version: 1.0.3
   - apiVersion: v2
     appVersion: 0.3.0
-    created: "2021-07-26T22:31:27.307538388-05:00"
+    created: "2021-08-08T23:34:58.653953253-07:00"
     description: A self-hosted recipe manager and meal planner
     digest: 02302243d77e163f2784b71a60095b4b303f074746fef7c7d13fd229282b6b02
     name: mealie
@@ -340,7 +350,7 @@ entries:
     version: 1.0.2
   - apiVersion: v2
     appVersion: 0.3.0
-    created: "2021-07-26T22:31:27.30153189-05:00"
+    created: "2021-08-08T23:34:58.653508504-07:00"
     description: A self-hosted recipe manager and meal planner
     digest: 2200bff5d46cbfdfbc1e0183c361066377a9bc29de87bccedb6a28f0a6b7a013
     name: mealie
@@ -350,7 +360,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2021-07-26T22:31:27.299947019-05:00"
+    created: "2021-08-08T23:34:58.653077723-07:00"
     description: A self-hosted recipe manager and meal planner
     digest: 690ec95bca0c2bf925be73fb0bd2170863f6405ffca28bb01258f5f2ca83fbd4
     name: mealie
@@ -358,10 +368,21 @@ entries:
     urls:
     - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/mealie-1.0.0.tgz
     version: 1.0.0
+  rick:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-08-08T23:34:58.659116479-07:00"
+    description: A self-hosted, self-contained Rickroll
+    digest: d8ab856aadcf26fcf6990f4841ee4eb79cb295928189986270550e49ae41ad8e
+    name: rick
+    type: application
+    urls:
+    - https://github.com/jonfairbanks/helm-charts/raw/master/rick/rick-1.0.0.tgz
+    version: 1.0.0
   yo-api:
   - apiVersion: v2
     appVersion: latest
-    created: "2021-07-26T22:31:27.318307752-05:00"
+    created: "2021-08-08T23:34:58.656706117-07:00"
     description: Backend service with DB for Yo application
     digest: 096093949aff58e32b1ee8f42c3c2cdb6eb96f32c2e85bc6391cedd1a6dd5ce6
     name: yo-api
@@ -371,7 +392,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: latest
-    created: "2021-07-26T22:31:27.317052216-05:00"
+    created: "2021-08-08T23:34:58.656315285-07:00"
     description: Backend service with DB for Yo application
     digest: dafc207c6ba600aac4884768e76e80fbe5ca7940164be662b0824e6c38cf6aa9
     name: yo-api
@@ -381,7 +402,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: latest
-    created: "2021-07-26T22:31:27.315768408-05:00"
+    created: "2021-08-08T23:34:58.65582025-07:00"
     description: Backend service with DB for Yo application
     digest: f04a37fc2ba653003b535b2f4e642b5a52fbdc50280b124f743a79b2acc3b2f9
     name: yo-api
@@ -392,7 +413,7 @@ entries:
   yo-client:
   - apiVersion: v2
     appVersion: develop
-    created: "2021-07-26T22:31:27.322314848-05:00"
+    created: "2021-08-08T23:34:58.658028352-07:00"
     description: Web client for Yo application
     digest: 33e7a48c65dad09050361fd5a64457711354f67d20e85a52cc62a4e6f399d5ba
     name: yo-client
@@ -402,7 +423,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: develop
-    created: "2021-07-26T22:31:27.320948864-05:00"
+    created: "2021-08-08T23:34:58.657583323-07:00"
     description: Web client for Yo application
     digest: 927df3be1acd4b3e327172818ee868062acc28f7b226c2553da30234efa00458
     name: yo-client
@@ -412,7 +433,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: develop
-    created: "2021-07-26T22:31:27.319634463-05:00"
+    created: "2021-08-08T23:34:58.657146117-07:00"
     description: Web client for Yo application
     digest: e8f55c1510b1539646dd3479d1d9591360375fcc5d0436504960457e29042bb1
     name: yo-client
@@ -420,4 +441,4 @@ entries:
     urls:
     - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/yo-client-0.1.0.tgz
     version: 0.1.0
-generated: "2021-07-26T22:31:27.179241309-05:00"
+generated: "2021-08-08T23:34:58.632396045-07:00"
