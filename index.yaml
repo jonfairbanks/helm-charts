@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   docker-node-app:
   - apiVersion: v2
+    appVersion: 2.0.19
+    created: "2021-08-08T23:34:58.640073557-07:00"
+    description: A sample Node.js app for testing Docker & Kubernetes
+    digest: 4a6bbb2402c9ca02fe4ed48fca272d96124edc635c64d5eac7923bcfcedc6e5f
+    name: docker-node-app
+    type: application
+    urls:
+    - https://github.com/jonfairbanks/helm-charts/raw/master/_releases/docker-node-app-2.0.19.tgz
+    version: 2.0.19
+  - apiVersion: v2
     appVersion: 2.0.10
     created: "2021-08-08T23:34:58.639417887-07:00"
     description: A sample Node.js app for testing Docker & Kubernetes
