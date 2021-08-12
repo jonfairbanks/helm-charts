@@ -3,4 +3,4 @@ appVersion: latest
 description: Backend service with DB for Yo application
 name: yo-api
 type: application
-version: 0.2.1
+version: 0.2.2
