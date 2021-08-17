@@ -10,9 +10,11 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
+existingSecret: hubot-slack-token
+
 slack:
   secretName: hubot-slack-token
-  token: YOUR-SLACK-TOKEN
+  token: ''
   logDir: '/app/logs/'
 
 
