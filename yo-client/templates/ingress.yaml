@@ -42,14 +42,14 @@ spec:
             path: "/api"
             backend:
               service:
-                name: {{ ( .Values.apiServiceName | default dict ).type | default yo-api }}
+                name: {{ ( .Values.apiServiceName | default dict ).type | default "yo-api" }}
                 port: 
                   number: {{ ( .Values.apiServicePort | default dict ).type | default 80 }}
           - pathType: Prefix
             path: "/socket.io"
             backend:
               service:
-                name: {{ ( .Values.apiServiceName | default dict ).type | default yo-api }}
+                name: {{ ( .Values.apiServiceName | default dict ).type | default "yo-api" }}
                 port: 
                   number: {{ ( .Values.apiServicePort | default dict ).type | default 80 }}
   {{- end }}
