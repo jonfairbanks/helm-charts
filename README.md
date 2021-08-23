@@ -12,14 +12,12 @@ Local Helm repository for Kubernetes
 - `helm search repo jonfairbanks`
 
 ### Charts
-
 - [docker-node-app](https://github.com/jonfairbanks/docker-node-app)
-- [f5-api](https://github.com/jonfairbanks/f5oclock)
 - [f5-web](https://github.com/jonfairbanks/f5oclock)
-- [halbert](https://github.com/Fairbanks-io/Halbert)
-- [jonfairbanks-homepage](https://jonfairbanks.github.io/)
+- [f5-api](https://github.com/jonfairbanks/f5oclock)
+- [halbert](https://github.com/jonfairbanks/Halbert)
+- [jonfairbanks-homepage](https://github.com/jonfairbanks/jonfairbanks.github.io)
 - [json-formatter](https://github.com/jonfairbanks/json-formatter)
 - [markdown-editor](https://github.com/jonfairbanks/markdown-editor)
-- [rick](https://github.com/modem7/docker-rickroll)
+- [rick](https://github.com/jonfairbanks/helm-charts)
 - [yo-client](https://github.com/jonfairbanks/yo)
-- [yo-api](https://github.com/jonfairbanks/yo)
