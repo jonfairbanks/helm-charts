@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: modem7/docker-rickroll
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "4k"
 
