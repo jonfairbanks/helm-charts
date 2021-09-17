@@ -8,7 +8,7 @@ image:
   repository: modem7/docker-rickroll
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "4k"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
