@@ -1,6 +1,4 @@
 https://github.com/jonfairbanks/docker-node-app;chart;docker-node-app
-https://github.com/jonfairbanks/f5oclock;/client/chart;f5-web
-https://github.com/jonfairbanks/f5oclock;/server/chart;f5-api
 https://github.com/jonfairbanks/Halbert;chart;halbert
 https://github.com/jonfairbanks/jonfairbanks.github.io;chart;jonfairbanks-homepage
 https://github.com/jonfairbanks/json-formatter;chart;json-formatter
