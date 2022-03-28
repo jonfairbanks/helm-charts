@@ -13,8 +13,6 @@ Local Helm repository for Kubernetes
 
 ### Charts
 - [docker-node-app](https://github.com/jonfairbanks/docker-node-app)
-- [f5-web](https://github.com/jonfairbanks/f5oclock)
-- [f5-api](https://github.com/jonfairbanks/f5oclock)
 - [halbert](https://github.com/jonfairbanks/Halbert)
 - [jonfairbanks-homepage](https://github.com/jonfairbanks/jonfairbanks.github.io)
 - [json-formatter](https://github.com/jonfairbanks/json-formatter)
