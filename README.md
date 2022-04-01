@@ -13,9 +13,6 @@ Local Helm repository for Kubernetes
 
 ### Charts
 - [docker-node-app](https://github.com/jonfairbanks/docker-node-app)
-- [halbert](https://github.com/jonfairbanks/Halbert)
 - [jonfairbanks-homepage](https://github.com/jonfairbanks/jonfairbanks.github.io)
-- [json-formatter](https://github.com/jonfairbanks/json-formatter)
-- [markdown-editor](https://github.com/jonfairbanks/markdown-editor)
 - [rick](https://github.com/jonfairbanks/helm-charts)
 - [yo-client](https://github.com/jonfairbanks/yo)
