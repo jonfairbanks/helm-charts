@@ -1,5 +1,2 @@
 https://github.com/jonfairbanks/docker-node-app;chart;docker-node-app
-https://github.com/jonfairbanks/jonfairbanks.github.io;chart;jonfairbanks-homepage
 https://github.com/jonfairbanks/helm-charts;rick;rick
-https://github.com/jonfairbanks/yo;/client/chart;yo-client
-https://github.com/jonfairbanks/yo;/server/chart;yo-api
