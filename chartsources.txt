@@ -1,2 +1,0 @@
-https://github.com/jonfairbanks/docker-node-app;chart;docker-node-app
-https://github.com/jonfairbanks/helm-charts;rick;rick
