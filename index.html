@@ -4,464 +4,416 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Public OCI Helm charts by Jon Fairbanks.">
-  <meta name="theme-color" content="#08110f">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://fairbanks.io/helm-charts/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2308110f'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23b7f34a' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f4c81'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M16 4v6M16 22v6M4 16h6M22 16h6M7.5 7.5l4.3 4.3M20.2 20.2l4.3 4.3M24.5 7.5l-4.3 4.3M11.8 20.2l-4.3 4.3' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
   <title>Fairbanks Helm Charts</title>
-  <script>document.documentElement.classList.add('js');</script>
   <style>
     :root {
-      --ink: #f3f7f1;
-      --muted: #9aa9a3;
-      --ground: #08110f;
-      --ground-soft: #0d1916;
-      --line: rgba(218, 235, 226, 0.16);
-      --accent: #b7f34a;
-      --accent-dark: #071004;
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --ink: #17202a;
+      --muted: #65717e;
+      --line: #dfe4e8;
+      --line-strong: #c9d0d6;
+      --helm: #0f4c81;
+      --helm-soft: #edf4fa;
+      --success: #27824a;
       --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       color: var(--ink);
-      background: var(--ground);
+      background: var(--bg);
       font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; }
+    a { color: var(--helm); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
     button { font: inherit; }
 
+    .shell {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
     .site-header {
-      position: absolute;
-      z-index: 10;
-      inset: 0 0 auto;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.5rem clamp(1.25rem, 4vw, 4.5rem);
+      gap: 24px;
     }
 
-    .brand {
+    .identity {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: -.01em;
+    }
+
+    .helm-mark { width: 28px; height: 28px; flex: none; }
+
+    .header-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status {
       display: inline-flex;
       align-items: center;
-      gap: .7rem;
-      text-decoration: none;
-      font-weight: 740;
-      letter-spacing: -.02em;
+      gap: 7px;
     }
 
-    .brand-mark {
-      width: 1.1rem;
-      aspect-ratio: 1;
-      border: 2px solid var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(183, 243, 74, .08);
-    }
-
-    .nav-link {
-      color: var(--muted);
-      font-size: .86rem;
-      text-decoration: none;
-      transition: color 180ms ease;
-    }
-    .nav-link:hover { color: var(--ink); }
-
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      overflow: hidden;
-      display: grid;
-      align-items: end;
-      padding: 8.5rem clamp(1.25rem, 7vw, 8rem) clamp(3.5rem, 9vh, 7rem);
-      isolation: isolate;
-      background:
-        radial-gradient(circle at var(--x, 72%) var(--y, 30%), rgba(183, 243, 74, .14), transparent 23rem),
-        linear-gradient(135deg, #08110f 0%, #0c1916 52%, #07100e 100%);
-    }
-
-    .hero::before {
+    .status::before {
       content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      opacity: .24;
-      background-image:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size: clamp(3.5rem, 7vw, 7rem) clamp(3.5rem, 7vw, 7rem);
-      mask-image: linear-gradient(to bottom, black, transparent 92%);
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
     }
 
-    .hero-copy { max-width: 69rem; }
+    main { padding: 54px 0 72px; }
 
-    .eyebrow {
-      margin: 0 0 1.4rem;
-      color: var(--accent);
-      font-family: var(--mono);
-      font-size: clamp(.72rem, 1vw, .86rem);
-      letter-spacing: .16em;
-      text-transform: uppercase;
+    .intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 36px;
     }
 
     h1 {
-      margin: 0;
-      max-width: 13ch;
-      font-size: clamp(3.6rem, 10vw, 9.5rem);
-      font-weight: 760;
-      letter-spacing: -.075em;
-      line-height: .86;
+      margin: 0 0 7px;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -.035em;
     }
 
-    .hero-bottom {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-top: clamp(2rem, 7vh, 5rem);
-      max-width: 62rem;
+    .intro p { margin: 0; color: var(--muted); }
+    .verified { color: var(--muted); font-size: 13px; white-space: nowrap; }
+
+    .registry {
+      display: grid;
+      grid-template-columns: 145px minmax(0, 1fr) auto;
+      align-items: center;
+      border: 1px solid var(--line-strong);
+      background: var(--surface);
+      margin-bottom: 44px;
     }
 
-    .hero-bottom p {
-      max-width: 37rem;
-      margin: 0;
+    .registry-label {
+      padding: 16px 18px;
+      border-right: 1px solid var(--line);
       color: var(--muted);
-      font-size: clamp(1rem, 1.6vw, 1.28rem);
-      line-height: 1.58;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
     }
 
-    .primary-link {
-      flex: none;
-      display: inline-flex;
-      align-items: center;
-      gap: .8rem;
-      min-height: 3.25rem;
-      padding: 0 1.2rem;
-      border-radius: .2rem;
-      background: var(--accent);
-      color: var(--accent-dark);
-      font-weight: 760;
-      text-decoration: none;
-      transition: transform 180ms ease, box-shadow 180ms ease;
-    }
-    .primary-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 .8rem 2.3rem rgba(183, 243, 74, .17);
-    }
-
-    .orbit {
-      position: absolute;
-      z-index: -1;
-      top: 11%;
-      right: clamp(-7rem, 2vw, 3rem);
-      width: min(48vw, 40rem);
-      color: var(--accent);
-      opacity: .82;
-      transform: translate3d(calc((var(--x-num, .5) - .5) * 18px), calc((var(--y-num, .5) - .5) * 18px), 0);
-      transition: transform 120ms linear;
-    }
-
-    main { overflow: hidden; }
-    .section {
-      padding: clamp(5rem, 11vw, 10rem) clamp(1.25rem, 7vw, 8rem);
-      border-top: 1px solid var(--line);
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: minmax(9rem, 1fr) minmax(0, 3fr);
-      gap: 2rem;
-      align-items: start;
-      margin-bottom: clamp(3rem, 7vw, 6rem);
-    }
-
-    .section-index {
-      color: var(--accent);
-      font-family: var(--mono);
-      font-size: .76rem;
-      letter-spacing: .12em;
-    }
-
-    h2 {
-      margin: 0;
-      max-width: 16ch;
-      font-size: clamp(2.5rem, 6vw, 5.8rem);
-      font-weight: 720;
-      letter-spacing: -.06em;
-      line-height: .96;
-    }
-
-    .catalog { border-top: 1px solid var(--line); }
-    .chart-row {
-      display: grid;
-      grid-template-columns: minmax(12rem, 1.1fr) minmax(0, 2fr) auto;
-      gap: clamp(1.5rem, 4vw, 4rem);
-      align-items: center;
-      padding: clamp(2rem, 4vw, 3.2rem) 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .chart-title h3 {
-      margin: 0 0 .55rem;
-      font-size: clamp(1.7rem, 3vw, 2.8rem);
-      letter-spacing: -.045em;
-    }
-    .chart-title p,
-    .chart-version { margin: 0; color: var(--muted); }
-    .chart-version { font-family: var(--mono); font-size: .8rem; }
-
-    .command-wrap {
-      min-width: 0;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 0 1rem 1.1rem;
-      border-left: 2px solid var(--accent);
-      background: rgba(255,255,255,.025);
-    }
     code {
-      min-width: 0;
-      overflow-wrap: anywhere;
-      color: #dce7df;
       font-family: var(--mono);
-      font-size: clamp(.72rem, 1.1vw, .9rem);
-      line-height: 1.6;
+      font-size: 13px;
+      overflow-wrap: anywhere;
     }
+
+    .registry code { padding: 16px 18px; }
+
     .copy {
-      flex: none;
-      margin-left: auto;
-      padding: .65rem .8rem;
-      border: 0;
-      background: transparent;
-      color: var(--muted);
+      min-height: 34px;
+      margin-right: 9px;
+      padding: 0 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 4px;
+      color: var(--helm);
+      background: var(--surface);
       cursor: pointer;
       font-family: var(--mono);
-      font-size: .72rem;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
       text-transform: uppercase;
-      transition: color 160ms ease, background 160ms ease;
+      transition: background 140ms ease, border-color 140ms ease;
     }
+
     .copy:hover,
-    .copy.copied { color: var(--accent); background: rgba(183, 243, 74, .08); }
+    .copy.copied { background: var(--helm-soft); border-color: #91b2cc; }
 
-    .chart-link {
-      color: var(--muted);
-      text-underline-offset: .35em;
-      transition: color 160ms ease;
+    .directory-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
     }
-    .chart-link:hover { color: var(--ink); }
 
-    .workflow {
-      background: var(--ground-soft);
+    h2 { margin: 0; font-size: 18px; letter-spacing: -.015em; }
+    .count { color: var(--muted); font-size: 13px; }
+
+    .packages {
+      border-top: 1px solid var(--line-strong);
+      background: var(--surface);
+    }
+
+    .package-head,
+    .package-summary {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(16rem, .9fr);
-      gap: clamp(3rem, 8vw, 9rem);
+      grid-template-columns: minmax(190px, 1.6fr) .65fr .75fr .8fr auto;
+      gap: 24px;
       align-items: center;
     }
-    .workflow p {
-      max-width: 38rem;
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-    .steps { border-top: 1px solid var(--line); }
-    .step {
-      display: grid;
-      grid-template-columns: 2.5rem 1fr;
-      gap: 1rem;
-      padding: 1.3rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .step span { color: var(--accent); font-family: var(--mono); font-size: .78rem; }
-    .step strong { font-size: 1rem; font-weight: 620; }
 
-    .final {
-      min-height: 72svh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 4rem;
+    .package-head {
+      padding: 10px 18px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      color: var(--muted);
+      background: #fbfcfd;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
     }
-    .final h2 { max-width: 12ch; }
-    .final-row {
+
+    .package {
+      border: 1px solid var(--line);
+      border-top: 0;
+      transition: border-color 140ms ease, background 140ms ease;
+    }
+
+    .package:hover { border-color: #b7c6d2; background: #fcfdff; }
+
+    .package-summary { padding: 20px 18px 14px; }
+    .package-name { min-width: 0; }
+    .package-name a {
+      display: inline-block;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .package-name a:hover { color: var(--helm); }
+    .package-name p { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+
+    .datum { font-family: var(--mono); font-size: 12px; }
+    .datum-label { display: none; }
+
+    .links {
       display: flex;
-      align-items: end;
+      gap: 14px;
+      justify-content: flex-end;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .install {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      margin: 0 18px 18px;
+      border-left: 3px solid var(--helm);
+      background: var(--helm-soft);
+    }
+
+    .install code { padding: 12px 14px; color: #193d59; }
+    .install .copy { margin-right: 7px; background: transparent; }
+
+    .usage {
+      display: flex;
       justify-content: space-between;
-      gap: 2rem;
-      padding-top: 2rem;
+      gap: 24px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .usage p { margin: 0; }
+
+    footer {
+      padding: 22px 0 36px;
       border-top: 1px solid var(--line);
       color: var(--muted);
+      font-size: 13px;
     }
 
-    .reveal { opacity: 1; transform: none; }
-    .js .reveal {
-      opacity: 0;
-      transform: translateY(1.5rem);
-      transition: opacity 650ms ease, transform 650ms cubic-bezier(.2,.7,.2,1);
-    }
-    .js .reveal.visible { opacity: 1; transform: none; }
-    .hero .reveal:nth-child(2) { transition-delay: 90ms; }
-    .hero .reveal:nth-child(3) { transition-delay: 170ms; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; }
 
     @media (max-width: 760px) {
-      .site-header { padding: 1.2rem; }
-      .hero { padding-inline: 1.25rem; }
-      .orbit { width: 75vw; top: 16%; right: -30%; opacity: .48; }
-      .hero-bottom,
-      .final-row { align-items: flex-start; flex-direction: column; }
-      .section-heading,
-      .workflow { grid-template-columns: 1fr; }
-      .chart-row { grid-template-columns: 1fr; }
-      .chart-link { justify-self: start; }
-      .command-wrap { padding-right: .35rem; }
+      .shell { width: min(100% - 28px, 1120px); }
+      .header-meta .status { display: none; }
+      main { padding-top: 36px; }
+      .intro { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .verified { white-space: normal; }
+      .registry { grid-template-columns: 1fr auto; }
+      .registry-label { grid-column: 1 / -1; border-right: 0; border-bottom: 1px solid var(--line); padding-block: 10px; }
+      .registry code { padding: 14px; }
+      .package-head { display: none; }
+      .package { border-top: 1px solid var(--line); margin-bottom: 12px; }
+      .package-summary { grid-template-columns: 1fr 1fr; gap: 15px 20px; }
+      .package-name { grid-column: 1 / -1; }
+      .datum-label {
+        display: block;
+        margin-bottom: 2px;
+        color: var(--muted);
+        font-family: var(--sans);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+      }
+      .links { grid-column: 1 / -1; justify-content: flex-start; }
+      .install { margin: 0 14px 14px; }
+      .usage, .footer-inner { flex-direction: column; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-      .js .reveal { opacity: 1; transform: none; }
-      .orbit { transform: none; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Fairbanks Helm Charts home">
-      <span class="brand-mark" aria-hidden="true"></span>
-      Fairbanks / Helm
-    </a>
-    <a class="nav-link" href="https://github.com/jonfairbanks/helm-charts">View source ↗</a>
+    <div class="shell header-inner">
+      <a class="identity" href="https://fairbanks.io/helm-charts/">
+        <svg class="helm-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="6" fill="#0f4c81"/>
+          <circle cx="16" cy="16" r="7" stroke="white" stroke-width="1.8"/>
+          <path d="M16 3.5v6M16 22.5v6M3.5 16h6M22.5 16h6M7.2 7.2l4.3 4.3M20.5 20.5l4.3 4.3M24.8 7.2l-4.3 4.3M11.5 20.5l-4.3 4.3" stroke="white" stroke-width="1.8"/>
+        </svg>
+        Fairbanks Helm Charts
+      </a>
+      <div class="header-meta">
+        <span class="status">Public registry</span>
+        <a href="https://github.com/jonfairbanks/helm-charts">GitHub</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section class="hero" id="top">
-      <svg class="orbit" viewBox="0 0 600 600" fill="none" aria-hidden="true">
-        <circle cx="300" cy="300" r="215" stroke="currentColor" stroke-width="1" stroke-dasharray="7 12"/>
-        <circle cx="300" cy="300" r="150" stroke="currentColor" stroke-opacity=".38"/>
-        <circle cx="300" cy="300" r="40" stroke="currentColor" stroke-width="4"/>
-        <path d="M300 85v175M300 340v175M85 300h175M340 300h175M148 148l124 124M328 328l124 124M452 148 328 272M272 328 148 452" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-        <circle cx="300" cy="85" r="10" fill="currentColor"/><circle cx="515" cy="300" r="10" fill="currentColor"/>
-        <circle cx="300" cy="515" r="10" fill="currentColor"/><circle cx="85" cy="300" r="10" fill="currentColor"/>
-      </svg>
-      <div class="hero-copy">
-        <p class="eyebrow reveal">Public OCI registry · Kubernetes 1.25+</p>
-        <h1 class="reveal">Charts without the chart museum.</h1>
-        <div class="hero-bottom reveal">
-          <p>Two focused Helm charts, published directly to GHCR, anonymously pullable, and verified against a live Kubernetes cluster.</p>
-          <a class="primary-link" href="#charts">Browse charts <span aria-hidden="true">↓</span></a>
+  <main class="shell">
+    <div class="intro">
+      <div>
+        <h1>Public Helm charts</h1>
+        <p>Versioned OCI packages for Kubernetes, published to GitHub Container Registry.</p>
+      </div>
+      <div class="verified">2 packages · Kubernetes 1.25+</div>
+    </div>
+
+    <section aria-labelledby="registry-label">
+      <div class="registry">
+        <span class="registry-label" id="registry-label">Registry endpoint</span>
+        <code>oci://ghcr.io/jonfairbanks/charts</code>
+        <button class="copy" type="button" data-copy="oci://ghcr.io/jonfairbanks/charts" aria-label="Copy registry endpoint">Copy</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="packages-heading">
+      <div class="directory-heading">
+        <h2 id="packages-heading">Packages</h2>
+        <span class="count">2 available</span>
+      </div>
+
+      <div class="packages">
+        <div class="package-head" aria-hidden="true">
+          <span>Chart</span><span>Version</span><span>App</span><span>Kubernetes</span><span>Links</span>
         </div>
-      </div>
-    </section>
 
-    <section class="section" id="charts">
-      <div class="section-heading reveal">
-        <span class="section-index">01 / CATALOG</span>
-        <h2>Current releases.</h2>
-      </div>
-
-      <div class="catalog">
-        <article class="chart-row reveal">
-          <div class="chart-title">
-            <h3>Rick</h3>
-            <p>A self-contained Rickroll.</p>
-            <p class="chart-version">2.0.0 · app 1080p</p>
+        <article class="package">
+          <div class="package-summary">
+            <div class="package-name">
+              <a href="https://github.com/jonfairbanks/helm-charts/tree/master/rick">rick</a>
+              <p>A self-hosted, self-contained Rickroll.</p>
+            </div>
+            <div class="datum"><span class="datum-label">Version</span>2.0.0</div>
+            <div class="datum"><span class="datum-label">App</span>1080p</div>
+            <div class="datum"><span class="datum-label">Kubernetes</span>&gt;=1.25</div>
+            <div class="links">
+              <a href="https://github.com/jonfairbanks/helm-charts/tree/master/rick">Source</a>
+              <a href="https://github.com/users/jonfairbanks/packages/container/package/charts%2Frick">Package</a>
+            </div>
           </div>
-          <div class="command-wrap">
+          <div class="install">
             <code>helm install rick oci://ghcr.io/jonfairbanks/charts/rick --version 2.0.0</code>
-            <button class="copy" type="button" data-command="helm install rick oci://ghcr.io/jonfairbanks/charts/rick --version 2.0.0" aria-label="Copy Rick install command">Copy</button>
+            <button class="copy" type="button" data-copy="helm install rick oci://ghcr.io/jonfairbanks/charts/rick --version 2.0.0" aria-label="Copy Rick install command">Copy</button>
           </div>
-          <a class="chart-link" href="https://github.com/jonfairbanks/helm-charts/tree/master/rick">Source ↗</a>
         </article>
 
-        <article class="chart-row reveal">
-          <div class="chart-title">
-            <h3>docker-node-app</h3>
-            <p>A modern Node.js reference app.</p>
-            <p class="chart-version">3.0.1 · app 3.0.0</p>
+        <article class="package">
+          <div class="package-summary">
+            <div class="package-name">
+              <a href="https://github.com/jonfairbanks/docker-node-app/tree/master/chart">docker-node-app</a>
+              <p>A sample Node.js app for Docker and Kubernetes.</p>
+            </div>
+            <div class="datum"><span class="datum-label">Version</span>3.0.1</div>
+            <div class="datum"><span class="datum-label">App</span>3.0.0</div>
+            <div class="datum"><span class="datum-label">Kubernetes</span>&gt;=1.25</div>
+            <div class="links">
+              <a href="https://github.com/jonfairbanks/docker-node-app/tree/master/chart">Source</a>
+              <a href="https://github.com/users/jonfairbanks/packages/container/package/charts%2Fdocker-node-app">Package</a>
+            </div>
           </div>
-          <div class="command-wrap">
+          <div class="install">
             <code>helm install my-app oci://ghcr.io/jonfairbanks/charts/docker-node-app --version 3.0.1</code>
-            <button class="copy" type="button" data-command="helm install my-app oci://ghcr.io/jonfairbanks/charts/docker-node-app --version 3.0.1" aria-label="Copy docker-node-app install command">Copy</button>
+            <button class="copy" type="button" data-copy="helm install my-app oci://ghcr.io/jonfairbanks/charts/docker-node-app --version 3.0.1" aria-label="Copy docker-node-app install command">Copy</button>
           </div>
-          <a class="chart-link" href="https://github.com/jonfairbanks/docker-node-app/tree/master/chart">Source ↗</a>
         </article>
       </div>
     </section>
 
-    <section class="section workflow">
-      <div class="reveal">
-        <span class="section-index">02 / OCI WORKFLOW</span>
-        <h2>Pull directly. Skip the index.</h2>
-        <p>OCI charts do not need <code>helm repo add</code> or <code>helm repo update</code>. Helm resolves the versioned artifact directly from GitHub Container Registry.</p>
-      </div>
-      <div class="steps reveal" aria-label="OCI chart workflow">
-        <div class="step"><span>01</span><strong>Choose a version</strong></div>
-        <div class="step"><span>02</span><strong>Install from the OCI URL</strong></div>
-        <div class="step"><span>03</span><strong>Upgrade with an explicit version</strong></div>
-      </div>
-    </section>
-
-    <section class="section final">
-      <div class="reveal">
-        <span class="section-index">03 / SOURCE</span>
-        <h2>Small registry. Open source.</h2>
-      </div>
-      <div class="final-row reveal">
-        <span>Published from GitHub Actions · Stored in GHCR</span>
-        <a class="primary-link" href="https://github.com/jonfairbanks/helm-charts">Explore the repository <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
+    <div class="usage">
+      <p>OCI charts install directly from GHCR. <code>helm repo add</code> is not required.</p>
+      <p>All versions are immutable.</p>
+    </div>
   </main>
 
-  <script>
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  <footer>
+    <div class="shell footer-inner">
+      <span>Maintained by Jon Fairbanks</span>
+      <a href="https://github.com/jonfairbanks/helm-charts">Repository and release workflow</a>
+    </div>
+  </footer>
 
-    if (!reducedMotion) {
-      const hero = document.querySelector('.hero');
-      hero.addEventListener('pointermove', (event) => {
-        const rect = hero.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width;
-        const y = (event.clientY - rect.top) / rect.height;
-        hero.style.setProperty('--x', `${x * 100}%`);
-        hero.style.setProperty('--y', `${y * 100}%`);
-        hero.style.setProperty('--x-num', x);
-        hero.style.setProperty('--y-num', y);
-      });
+  <script>
+    async function copyText(value) {
+      try {
+        await navigator.clipboard.writeText(value);
+      } catch {
+        const textarea = document.createElement('textarea');
+        textarea.value = value;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+      }
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14 });
-
-    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-
-    document.querySelectorAll('.copy').forEach((button) => {
+    document.querySelectorAll('[data-copy]').forEach((button) => {
       button.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(button.dataset.command);
-        } catch {
-          const textarea = document.createElement('textarea');
-          textarea.value = button.dataset.command;
-          textarea.style.position = 'fixed';
-          textarea.style.opacity = '0';
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand('copy');
-          textarea.remove();
-        }
+        await copyText(button.dataset.copy);
         button.textContent = 'Copied';
         button.classList.add('copied');
         window.setTimeout(() => {
           button.textContent = 'Copy';
           button.classList.remove('copied');
-        }, 1600);
+        }, 1400);
       });
     });
   </script>
