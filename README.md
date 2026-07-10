@@ -17,7 +17,7 @@ helm upgrade rick oci://ghcr.io/jonfairbanks/charts/rick --version 2.0.0
 ## docker-node-app
 
 ```sh
-helm install my-app oci://ghcr.io/jonfairbanks/charts/docker-node-app --version 3.0.0
+helm install my-app oci://ghcr.io/jonfairbanks/charts/docker-node-app --version 3.0.1
 ```
 
 The docker-node-app chart is maintained and published from
