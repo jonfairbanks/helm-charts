@@ -1,0 +1,148 @@
+name: Rick chart
+
+on:
+  pull_request:
+    paths:
+      - "rick/**"
+      - ".github/workflows/rick.yml"
+  push:
+    branches:
+      - master
+    paths:
+      - "rick/**"
+      - ".github/workflows/rick.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  HELM_VERSION: v4.2.3
+  KUBECONFORM_VERSION: v0.8.0
+
+jobs:
+  validate:
+    name: Validate Rick
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+
+      - name: Set up Helm
+        uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1
+        with:
+          version: ${{ env.HELM_VERSION }}
+
+      - name: Install kubeconform
+        run: |
+          archive="kubeconform-linux-amd64.tar.gz"
+          curl --fail --silent --show-error --location \
+            "https://github.com/yannh/kubeconform/releases/download/${KUBECONFORM_VERSION}/${archive}" \
+            --output "/tmp/${archive}"
+          echo "9bc2bffbf71f261128533edaf912153948b7ff238f9a531ae6d34466ec287883  /tmp/${archive}" | sha256sum --check
+          tar --extract --gzip --file "/tmp/${archive}" --directory /usr/local/bin kubeconform
+
+      - name: Require a chart version increment
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          if git diff --quiet "origin/${BASE_REF}...HEAD" -- rick; then
+            exit 0
+          fi
+          base_version=$(git show "origin/${BASE_REF}:rick/Chart.yaml" | awk '/^version:/ { print $2; exit }')
+          current_version=$(awk '/^version:/ { print $2; exit }' rick/Chart.yaml)
+          if ! dpkg --compare-versions "$current_version" gt "$base_version"; then
+            echo "Rick chart version must increase beyond ${base_version}; found ${current_version}." >&2
+            exit 1
+          fi
+
+      - name: Lint and package
+        run: |
+          helm lint --strict ./rick
+          helm package ./rick --destination /tmp/charts
+
+      - name: Render validation scenarios
+        run: |
+          mkdir -p /tmp/rendered
+          for kube_version in 1.25.0 1.36.2; do
+            helm template default ./rick --kube-version "$kube_version" > "/tmp/rendered/default-${kube_version}.yaml"
+            helm template ingress ./rick --kube-version "$kube_version" \
+              --set ingress.enabled=true \
+              --set ingress.className=nginx \
+              --set ingress.hosts[0].host=rick.example.com \
+              --set ingress.hosts[0].paths[0].path=/ \
+              --set ingress.hosts[0].paths[0].pathType=Prefix \
+              --set ingress.hosts[0].paths[1].path=/exact \
+              --set ingress.hosts[0].paths[1].pathType=Exact \
+              --set ingress.hosts[1].host=other.example.com \
+              --set ingress.hosts[1].paths[0].path=/ \
+              --set ingress.hosts[1].paths[0].pathType=Prefix \
+              > "/tmp/rendered/ingress-${kube_version}.yaml"
+            helm template autoscaling ./rick --kube-version "$kube_version" \
+              --set autoscaling.enabled=true \
+              > "/tmp/rendered/autoscaling-${kube_version}.yaml"
+            helm template pdb ./rick --kube-version "$kube_version" \
+              --set replicaCount=2 \
+              --set podDisruptionBudget.enabled=true \
+              > "/tmp/rendered/pdb-${kube_version}.yaml"
+            helm template overrides ./rick --kube-version "$kube_version" \
+              --set image.tag=480p \
+              --set image.digest= \
+              --set serviceAccount.name=existing \
+              --set imagePullSecrets[0].name=registry-credentials \
+              > "/tmp/rendered/overrides-${kube_version}.yaml"
+          done
+
+      - name: Validate Kubernetes manifests
+        run: |
+          for kube_version in 1.25.0 1.36.2; do
+            kubeconform -strict -summary -kubernetes-version "$kube_version" "/tmp/rendered/default-${kube_version}.yaml"
+            kubeconform -strict -summary -kubernetes-version "$kube_version" "/tmp/rendered/ingress-${kube_version}.yaml"
+            kubeconform -strict -summary -kubernetes-version "$kube_version" "/tmp/rendered/autoscaling-${kube_version}.yaml"
+            kubeconform -strict -summary -kubernetes-version "$kube_version" "/tmp/rendered/pdb-${kube_version}.yaml"
+            kubeconform -strict -summary -kubernetes-version "$kube_version" "/tmp/rendered/overrides-${kube_version}.yaml"
+          done
+
+      - name: Assert secure runtime contract
+        run: |
+          manifest=/tmp/rendered/default-1.36.2.yaml
+          grep --quiet 'containerPort: 8080' "$manifest"
+          grep --quiet 'containerPort: 9090' "$manifest"
+          grep --quiet 'port: health' "$manifest"
+          grep --quiet 'targetPort: http' "$manifest"
+          grep --quiet 'automountServiceAccountToken: false' "$manifest"
+          ! grep --quiet --extended-regexp 'v1beta1|v2beta1|v2beta2' /tmp/rendered/*.yaml
+
+  publish:
+    name: Publish Rick to GHCR
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Check out source
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Set up Helm
+        uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1
+        with:
+          version: ${{ env.HELM_VERSION }}
+
+      - name: Publish immutable chart version
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version=$(awk '/^version:/ { print $2; exit }' rick/Chart.yaml)
+          chart=oci://ghcr.io/jonfairbanks/charts/rick
+          if helm show chart "$chart" --version "$version" >/dev/null 2>&1; then
+            echo "${chart}:${version} already exists; increment rick/Chart.yaml." >&2
+            exit 1
+          fi
+          echo "$GHCR_TOKEN" | helm registry login ghcr.io --username "$GITHUB_ACTOR" --password-stdin
+          helm package ./rick --destination /tmp/charts
+          helm push "/tmp/charts/rick-${version}.tgz" oci://ghcr.io/jonfairbanks/charts

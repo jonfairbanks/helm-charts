@@ -20,6 +20,7 @@ spec:
       labels:
         {{- include "rick.selectorLabels" . | nindent 8 }}
     spec:
+      automountServiceAccountToken: false
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -31,20 +32,26 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: {{ include "rick.image" . | quote }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: PORT
+              value: {{ .Values.containerPorts.http | quote }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ .Values.containerPorts.http }}
+              protocol: TCP
+            - name: health
+              containerPort: {{ .Values.containerPorts.health }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /healthz
-              port: http
+              port: health
           readinessProbe:
             httpGet:
               path: /healthz
-              port: http
+              port: health
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
