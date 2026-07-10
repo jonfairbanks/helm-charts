@@ -2,7 +2,7 @@
 
 Helm charts published as public OCI artifacts in GitHub Container Registry.
 
-Browse the chart catalog at [jonfairbanks.github.io/helm-charts](https://jonfairbanks.github.io/helm-charts/).
+Browse the chart catalog at [fairbanks.io/helm-charts](https://fairbanks.io/helm-charts/).
 
 ## Rick
 
