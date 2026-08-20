@@ -7,13 +7,13 @@ Browse the chart catalog at [fairbanks.io/helm-charts](https://fairbanks.io/helm
 ## Rick
 
 ```sh
-helm install rick oci://ghcr.io/jonfairbanks/charts/rick --version 2.0.0 --namespace rick --create-namespace
+helm install rick oci://ghcr.io/jonfairbanks/charts/rick --version 2.0.1 --namespace rick --create-namespace
 ```
 
 Upgrade an existing release after reviewing the [Rick 2.0.0 breaking changes](#rick-200-breaking-changes):
 
 ```sh
-helm upgrade rick oci://ghcr.io/jonfairbanks/charts/rick --version 2.0.0
+helm upgrade rick oci://ghcr.io/jonfairbanks/charts/rick --version 2.0.1
 ```
 
 ## docker-node-app

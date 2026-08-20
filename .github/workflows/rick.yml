@@ -114,6 +114,10 @@ jobs:
           grep --quiet 'port: health' "$manifest"
           grep --quiet 'targetPort: http' "$manifest"
           grep --quiet 'automountServiceAccountToken: false' "$manifest"
+          grep --quiet --fixed-strings 'cpu: 10m' "$manifest"
+          grep --quiet --fixed-strings 'memory: 50Mi' "$manifest"
+          grep --quiet --fixed-strings 'memory: 64Mi' "$manifest"
+          ! grep --quiet --fixed-strings 'cpu: 25m' "$manifest"
           ! grep --quiet --extended-regexp 'v1beta1|v2beta1|v2beta2' /tmp/rendered/*.yaml
 
   publish:
