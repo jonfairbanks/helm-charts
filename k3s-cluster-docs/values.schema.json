@@ -2,9 +2,11 @@
   "$schema": "https://json-schema.org/draft-07/schema#",
   "type": "object",
   "additionalProperties": false,
-  "required": ["replicaCount", "image", "imagePullSecrets", "serviceAccount", "podAnnotations", "podSecurityContext", "securityContext", "containerPort", "service", "ingress", "resources", "nodeSelector", "tolerations", "affinity"],
+  "required": ["replicaCount", "strategy", "podDisruptionBudget", "image", "imagePullSecrets", "serviceAccount", "podAnnotations", "podSecurityContext", "securityContext", "containerPort", "service", "ingress", "resources", "nodeSelector", "tolerations", "affinity"],
   "properties": {
     "replicaCount": {"type": "integer", "minimum": 1},
+    "strategy": {"type": "object", "additionalProperties": false, "required": ["type", "rollingUpdate"], "properties": {"type": {"enum": ["RollingUpdate", "Recreate"]}, "rollingUpdate": {"type": "object", "additionalProperties": false, "required": ["maxUnavailable", "maxSurge"], "properties": {"maxUnavailable": {"type": ["integer", "string"]}, "maxSurge": {"type": ["integer", "string"]}}}}},
+    "podDisruptionBudget": {"type": "object", "additionalProperties": false, "required": ["enabled", "minAvailable", "maxUnavailable"], "properties": {"enabled": {"type": "boolean"}, "minAvailable": {"type": ["integer", "string"]}, "maxUnavailable": {"type": ["integer", "string"]}}},
     "image": {
       "type": "object",
       "additionalProperties": false,

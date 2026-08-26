@@ -74,6 +74,10 @@ jobs:
           grep --quiet 'readOnlyRootFilesystem: true' /tmp/default.yaml
           grep --quiet 'containerPort: 8080' /tmp/default.yaml
           grep --quiet 'path: /healthz' /tmp/default.yaml
+          grep --quiet 'maxUnavailable: 0' /tmp/default.yaml
+          grep --quiet 'maxSurge: 1' /tmp/default.yaml
+          grep --quiet 'kind: PodDisruptionBudget' /tmp/default.yaml
+          grep --quiet 'minAvailable: 1' /tmp/default.yaml
           grep --quiet 'name: ghcr-pull' /tmp/ingress.yaml
 
   publish:
