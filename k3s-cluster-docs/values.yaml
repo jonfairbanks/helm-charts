@@ -1,5 +1,16 @@
 replicaCount: 1
 
+strategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxUnavailable: 0
+    maxSurge: 1
+
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 1
+  maxUnavailable: ""
+
 image:
   repository: ghcr.io/jonfairbanks/k3s-cluster-docs
   tag: "1.0.4"

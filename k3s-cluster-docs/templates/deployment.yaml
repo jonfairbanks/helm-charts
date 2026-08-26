@@ -6,6 +6,8 @@ metadata:
     {{- include "k3s-cluster-docs.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  strategy:
+    {{- toYaml .Values.strategy | nindent 4 }}
   selector:
     matchLabels:
       {{- include "k3s-cluster-docs.selectorLabels" . | nindent 6 }}

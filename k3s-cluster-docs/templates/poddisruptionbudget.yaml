@@ -1,0 +1,17 @@
+{{- if .Values.podDisruptionBudget.enabled -}}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "k3s-cluster-docs.fullname" . }}
+  labels:
+    {{- include "k3s-cluster-docs.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "k3s-cluster-docs.selectorLabels" . | nindent 6 }}
+  {{- if ne (toString .Values.podDisruptionBudget.minAvailable) "" }}
+  minAvailable: {{ .Values.podDisruptionBudget.minAvailable }}
+  {{- else }}
+  maxUnavailable: {{ .Values.podDisruptionBudget.maxUnavailable }}
+  {{- end }}
+{{- end }}
