@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "k3s-cluster-docs.fullname" . }}
+  labels:
+    {{- include "k3s-cluster-docs.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: http
+      port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+  selector:
+    {{- include "k3s-cluster-docs.selectorLabels" . | nindent 4 }}
