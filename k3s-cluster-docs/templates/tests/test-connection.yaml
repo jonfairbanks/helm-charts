@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "k3s-cluster-docs.fullname" . }}-test-connection"
+  labels:
+    {{- include "k3s-cluster-docs.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  automountServiceAccountToken: false
+  containers:
+    - name: wget
+      image: busybox:1.37.0
+      command: ["wget"]
+      args: ["--spider", "{{ include "k3s-cluster-docs.fullname" . }}:{{ .Values.service.port }}/healthz"]
+  restartPolicy: Never
