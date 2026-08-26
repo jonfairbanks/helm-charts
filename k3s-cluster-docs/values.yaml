@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/jonfairbanks/k3s-cluster-docs
   tag: "1.0.1"
-  digest: ""
+  digest: "sha256:8b09f6716f597d99a5c35c1e6a90a22abc8824299be2329b51e6be0a1d6068b3"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
