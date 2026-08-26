@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/jonfairbanks/k3s-cluster-docs
-  tag: "1.0.0"
+  tag: "1.0.1"
   digest: ""
   pullPolicy: IfNotPresent
 
