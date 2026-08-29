@@ -2,8 +2,8 @@ apiVersion: v2
 name: k3s-cluster-docs
 description: Private internal handbook for a K3s cluster
 type: application
-version: 1.0.6
-appVersion: "1.0.6"
+version: 1.0.7
+appVersion: "1.0.7"
 kubeVersion: ">=1.25.0-0"
 home: https://github.com/jonfairbanks/k3s-cluster-docs
 sources:

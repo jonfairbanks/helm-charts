@@ -13,8 +13,8 @@ podDisruptionBudget:
 
 image:
   repository: ghcr.io/jonfairbanks/k3s-cluster-docs
-  tag: "1.0.6"
-  digest: "sha256:020ec94144fe3c7b3162026c349fd805055fd6b29bb4f13ba771df44f7a326fc"
+  tag: "1.0.7"
+  digest: "sha256:214a57a3cd9405b2a0b5822d147a9ca8162fad1b4aa9dd12cffa23c3f633a7e9"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
