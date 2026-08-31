@@ -13,8 +13,11 @@ podDisruptionBudget:
 
 image:
   repository: ghcr.io/jonfairbanks/k3s-cluster-docs
-  tag: "1.0.13"
-  digest: "sha256:ae10ec7659ab8a487869ade56228a48856b3eb4fe1c9da722890f9644c180e58"
+  # Argo CD Image Updater resolves this mutable tag to an immutable digest in
+  # the environment-specific values file. Do not bump this chart for image-only
+  # releases.
+  tag: "latest"
+  digest: ""
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
